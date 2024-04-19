@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - invoice-db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: example
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgres://example:example@db:5432/invoice_db
+
+
+networks:
+  shipped-network:
+    driver: bridge
+
+volumes:
+  invoice-db:
+    driver: local
