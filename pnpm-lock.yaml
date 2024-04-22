@@ -68,6 +68,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@fontsource-variable/league-spartan':
+        specifier: ^5.0.20
+        version: 5.0.20
       '@vueuse/nuxt':
         specifier: ^10.9.0
         version: 10.9.0(nuxt@3.11.2)(vue@3.4.23)
@@ -1036,6 +1039,10 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: false
+
+  /@fontsource-variable/league-spartan@5.0.20:
+    resolution: {integrity: sha512-rJJOemaQs2KhQ7LdPjo8I/wZYuewASwNAZAomPEbocKBTa320Xl2zdl+tNSJoix79LNWraMwAe59zrnbMe3FwQ==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
