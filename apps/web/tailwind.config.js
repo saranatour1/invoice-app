@@ -1,6 +1,7 @@
 import plugin from 'tailwindcss/plugin';
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -23,6 +24,8 @@ export default {
       "10":"#FF9797",
       "11":"#F8F8FB",
       "12":"#141625",
+      "13":"#373B53",
+      "14":"#494E6E",
     },
     fontFamily:{
       "spartan":['League Spartan Variable', 'sans-serif']
@@ -39,17 +42,21 @@ export default {
       sm:"-0.25px",
       xsm:"-0.1px"
     },
-    extend: {},
+    extend: {
+      borderRadius:{
+        n:'20px'
+      }
+    },
   },
   plugins: [
-    plugin(function({ addComponents, theme }) {
-      addComponents({
+    plugin(function({ addUtilities,addComponents, theme }) {
+      addUtilities({
         '.heading-l':{
           fontFamily:theme("fontFamily.spartan"),
           fontSize:theme("fontSize.h1"),
           lineHeight:"2.0625rem",
           letterSpacing:theme("letterSpacing.lg"),
-          fontWeight: bold,
+          fontWeight: "bold",
           color:theme("colors.08")
         },
         ".heading-m":{
@@ -57,7 +64,7 @@ export default {
           fontSize:theme("fontSize.h2"),
           lineHeight:"1.375rem",
           letterSpacing:theme("letterSpacing.md"),
-          fontWeight: bold,
+          fontWeight: "bold",
           color:theme("colors.08")
         },
         ".heading-sm":{
@@ -65,7 +72,7 @@ export default {
           fontSize:theme("fontSize.h3"),
           lineHeight:"1.5rem",
           letterSpacing:theme("letterSpacing.sm"),
-          fontWeight: bold,
+          fontWeight: "bold",
           color:theme("colors.08")
         },
         ".heading-sm-variant":{
@@ -80,14 +87,15 @@ export default {
           fontFamily:theme("fontFamily.spartan"),
           fontSize:theme("fontSize.body"),
           lineHeight:"1.125rem",
-          fontWeight: "medium",
+          fontWeight: "normal",
           letterSpacing:theme("letterSpacing.xsm"),
+          color:theme("colors.06")
         },
         ".body-variant":{
           fontFamily:theme("fontFamily.spartan"),
           fontSize:theme("fontSize.body"),
           lineHeight:"0.9375rem",
-          fontWeight: "medium",
+          fontWeight: "normal",
           letterSpacing:theme("letterSpacing.sm"),
         }
       })

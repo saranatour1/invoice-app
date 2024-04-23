@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "web",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource-variable/league-spartan": "^5.0.20",
+    "@pinia/nuxt": "^0.5.1",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.11.2",
     "vue": "^3.4.21",
